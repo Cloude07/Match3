@@ -1,6 +1,7 @@
 ﻿using Game.GridSystem;
 using Game.Tiles;
 using Game.Utils;
+using Input;
 using Levels;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,13 @@ namespace Game.Board
         private BlankTilesSetup _blankTilesSetup;
         private GameDebug _gameDebug;
         private TilePool _tilePool;
-
+        private InputReader _inputReader;
 
         private void Start()
         {
+            _inputReader = new InputReader();
+            _inputReader.EnableInputs(true);
+
             _grid.SetupGrid(_levelConfig.Width, _levelConfig.Height);
             _blankTilesSetup.SetupBlanks(_levelConfig);
             CreateBoard();
@@ -35,11 +39,11 @@ namespace Game.Board
             if (_isDebug)
                 _gameDebug.ShowwDebug(transform);
         }
-
         public void CreateBoard()
         {
             FillBoard();
         }
+
 
         private void FillBoard()
         {
