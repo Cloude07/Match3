@@ -15,8 +15,8 @@ namespace DI
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_gameBoard);
-            builder.Register<IGrid,Grid>(Lifetime.Singleton);
-            builder.Register<SetupCamera>(Lifetime.Singleton);
+            builder.Register<IGrid, Grid>(Lifetime.Singleton);
+            builder.Register<ISetupCamera, SetupCamera>(Lifetime.Singleton);
         }
     }
 }

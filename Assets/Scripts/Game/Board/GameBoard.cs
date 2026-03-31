@@ -21,8 +21,9 @@ namespace Game.Board
         private Vector2 _sizeBoard;
 
         private readonly List<Tile> _tilesToRefill = new List<Tile>();
+
         private IGrid _grid;
-        private SetupCamera _setupCamera;
+        private ISetupCamera _setupCamera;
 
         private void Start()
         {
@@ -53,7 +54,7 @@ namespace Game.Board
         }
 
         [Inject]
-        private void Construct(IGrid grid, SetupCamera setupCamera)
+        private void Construct(IGrid grid, ISetupCamera setupCamera)
         {
             _grid = grid;
             _setupCamera = setupCamera;
