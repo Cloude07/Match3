@@ -1,6 +1,8 @@
 ﻿using Game.Board;
 using Game.GridSystem;
+using Game.Tiles;
 using Game.Utils;
+using ResourcesLoading;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -12,11 +14,16 @@ namespace DI
     {
         [SerializeField]
         private GameBoard _gameBoard;
+        [SerializeField]
+        private GameResourcesLoader _resourcesLoader;
+
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_gameBoard);
+            builder.RegisterInstance(_resourcesLoader);
             builder.Register<IGrid,Grid>(Lifetime.Singleton);
             builder.Register<SetupCamera>(Lifetime.Singleton);
+            builder.Register<TilePool>(Lifetime.Singleton);
         }
     }
 }
