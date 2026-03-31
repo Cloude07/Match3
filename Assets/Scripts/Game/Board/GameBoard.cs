@@ -16,13 +16,15 @@ namespace Game.Board
         private bool _isVertical = false;
         [SerializeField]
         private Vector2 _sizeBoard;
+        [SerializeField]
+        private bool _isDebug = false;
 
 
         private readonly List<Tile> _tilesToRefill = new List<Tile>();
 
         private IGrid _grid;
         private ISetupCamera _setupCamera;
-
+        private GameDebug _gameDebug;
         private TilePool _tilePool;
 
 
@@ -31,6 +33,8 @@ namespace Game.Board
             _grid.SetupGrid((int)_sizeBoard.x, (int)_sizeBoard.y);
             CreateBoard();
             _setupCamera.SetCamera(_grid.Width, _grid.Height, _isVertical);
+            if (_isDebug)
+                _gameDebug.ShowwDebug(transform);
         }
 
         public void CreateBoard()
@@ -46,7 +50,7 @@ namespace Game.Board
                 {
                     if (_grid.GetValue(x, y)) continue;
 
-                    var tile = _tilePool.GetTile(_grid.GridToWorld(x, y),transform);
+                    var tile = _tilePool.GetTile(_grid.GridToWorld(x, y), transform);
                     _grid.SetValue(x, y, tile);
                     tile.gameObject.SetActive(true);
                     _tilesToRefill.Add(tile);
@@ -56,11 +60,13 @@ namespace Game.Board
         }
 
         [Inject]
-        private void Construct(IGrid grid, ISetupCamera setupCamera, TilePool tilePool)
+        private void Construct(IGrid grid, ISetupCamera setupCamera,
+            TilePool tilePool, GameDebug gameDebug)
         {
             _grid = grid;
             _setupCamera = setupCamera;
             _tilePool = tilePool;
+            _gameDebug = gameDebug;
         }
 
 

@@ -22,6 +22,7 @@ namespace DI
             builder.RegisterInstance(_gameBoard);
             builder.RegisterInstance(_resourcesLoader);
             builder.Register<IGrid,Grid>(Lifetime.Singleton);
+            builder.Register<GameDebug>(Lifetime.Singleton);
             builder.Register<ISetupCamera, SetupCamera>(Lifetime.Singleton);
             builder.Register<TilePool>(Lifetime.Singleton);
         }
