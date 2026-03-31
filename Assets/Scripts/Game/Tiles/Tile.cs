@@ -3,7 +3,7 @@
 namespace Game.Tiles
 {
     [RequireComponent (typeof (SpriteRenderer))]
-    internal class Tile : MonoBehaviour
+    public class Tile : MonoBehaviour
     {
         public TileConfig TileConfi { get; private set; }
         public bool IsInteractable { get; private set; }
