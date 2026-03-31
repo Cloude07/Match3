@@ -19,11 +19,11 @@ namespace Game.Board
         [SerializeField]
         private bool _isDebug = false;
 
-
         private readonly List<Tile> _tilesToRefill = new List<Tile>();
 
         private IGrid _grid;
         private ISetupCamera _setupCamera;
+        private BlankTilesSetup _blankTilesSetup;
         private GameDebug _gameDebug;
         private TilePool _tilePool;
 
@@ -31,6 +31,7 @@ namespace Game.Board
         private void Start()
         {
             _grid.SetupGrid((int)_sizeBoard.x, (int)_sizeBoard.y);
+            _blankTilesSetup.SetupBlanks((int)_sizeBoard.x, (int)_sizeBoard.y);
             CreateBoard();
             _setupCamera.SetCamera(_grid.Width, _grid.Height, _isVertical);
             if (_isDebug)
@@ -48,25 +49,32 @@ namespace Game.Board
             {
                 for (int y = 0; y < _grid.Height; y++)
                 {
-                    if (_grid.GetValue(x, y)) continue;
-
-                    var tile = _tilePool.GetTile(_grid.GridToWorld(x, y), transform);
-                    _grid.SetValue(x, y, tile);
-                    tile.gameObject.SetActive(true);
-                    _tilesToRefill.Add(tile);
-
+                    if (_blankTilesSetup.Blanks[x, y])
+                    {
+                        if (_grid.GetValue(x, y)) continue;
+                        var blankTile = _tilePool.CreateBlankTile(_grid.GridToWorld(x, y), transform);
+                        _grid.SetValue(x, y, blankTile);
+                    }
+                    else
+                    {
+                        var tile = _tilePool.GetTile(_grid.GridToWorld(x, y), transform);
+                        _grid.SetValue(x, y, tile);
+                        tile.gameObject.SetActive(true);
+                        _tilesToRefill.Add(tile);
+                    }
                 }
             }
         }
 
         [Inject]
         private void Construct(IGrid grid, ISetupCamera setupCamera,
-            TilePool tilePool, GameDebug gameDebug)
+            TilePool tilePool, GameDebug gameDebug, BlankTilesSetup blankTilesSetup)
         {
             _grid = grid;
             _setupCamera = setupCamera;
             _tilePool = tilePool;
             _gameDebug = gameDebug;
+            _blankTilesSetup = blankTilesSetup;
         }
 
 
