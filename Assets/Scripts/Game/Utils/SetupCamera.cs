@@ -2,7 +2,9 @@
 
 namespace Game.Utils
 {
+
     public class SetupCamera
+
     {
         private bool _isVertical;
 

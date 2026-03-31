@@ -9,6 +9,7 @@ namespace Game.Board
 {
     public class GameBoard : MonoBehaviour
     {
+
         [Header("Test")]
         [SerializeField]
         private TileConfig _tileConfig;
@@ -17,11 +18,15 @@ namespace Game.Board
         [SerializeField]
         private Vector2 _sizeBoard;
 
-        private TilePool _tilePool;
 
         private readonly List<Tile> _tilesToRefill = new List<Tile>();
+
+        private TilePool _tilePool;
+
         private IGrid _grid;
+
         private SetupCamera _setupCamera;
+
 
         private void Start()
         {

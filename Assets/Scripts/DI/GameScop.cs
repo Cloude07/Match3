@@ -14,6 +14,7 @@ namespace DI
     {
         [SerializeField]
         private GameBoard _gameBoard;
+
         [SerializeField]
         private GameResourcesLoader _resourcesLoader;
 
@@ -24,6 +25,7 @@ namespace DI
             builder.Register<IGrid,Grid>(Lifetime.Singleton);
             builder.Register<SetupCamera>(Lifetime.Singleton);
             builder.Register<TilePool>(Lifetime.Singleton);
+
         }
     }
 }
