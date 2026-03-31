@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.GridSystem
 {
-    public class Grid
+    public class Grid : IGrid
     {
         public Tile[,] GameGrid { get; private set; }
         public int Width { get; private set; }
@@ -12,7 +12,7 @@ namespace Game.GridSystem
         public Vector2Int CurrentPosition { get; private set; }
         public Vector2Int TargetPosition { get; private set; }
 
-        public void  SetupGrid(int width, int height)
+        public void SetupGrid(int width, int height)
         {
             Width = width;
             Height = height;

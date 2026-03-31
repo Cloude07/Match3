@@ -1,4 +1,6 @@
 ﻿using Game.Board;
+using Game.GridSystem;
+using Game.Utils;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -12,8 +14,9 @@ namespace DI
         private GameBoard _gameBoard;
         protected override void Configure(IContainerBuilder builder)
         {
-            builder.Register<Grid>(Lifetime.Singleton);
             builder.RegisterInstance(_gameBoard);
+            builder.Register<IGrid,Grid>(Lifetime.Singleton);
+            builder.Register<SetupCamera>(Lifetime.Singleton);
         }
     }
 }

@@ -180,7 +180,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -463,6 +463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Game.Board.GameBoard
   _tilePrefab: {fileID: 7398622418354616533, guid: 9a37b4320b30f3f4e9b194a93182e2f1, type: 3}
   _tileConfig: {fileID: 11400000, guid: 35304b0fd56ced841b14444d7be6626b, type: 2}
+  _isVertical: 1
+  _sizeBoard: {x: 10, y: 10}
 --- !u!4 &883309608
 Transform:
   m_ObjectHideFlags: 0

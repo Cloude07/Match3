@@ -1,8 +1,9 @@
-﻿using Game.Tiles;
+﻿using Game.GridSystem;
+using Game.Tiles;
+using Game.Utils;
 using System.Collections.Generic;
 using UnityEngine;
 using VContainer;
-using Grid = Game.GridSystem.Grid;
 
 namespace Game.Board
 {
@@ -11,16 +12,23 @@ namespace Game.Board
         [SerializeField]
         private GameObject _tilePrefab;
 
+        [Header("Test")]
         [SerializeField]
         private TileConfig _tileConfig;
+        [SerializeField]
+        private bool _isVertical = false;
+        [SerializeField]
+        private Vector2 _sizeBoard;
 
         private readonly List<Tile> _tilesToRefill = new List<Tile>();
-        private Grid _grid;
+        private IGrid _grid;
+        private SetupCamera _setupCamera;
 
         private void Start()
         {
-            _grid.SetupGrid(10, 10);
+            _grid.SetupGrid((int)_sizeBoard.x, (int)_sizeBoard.y);
             CreateBoard();
+            _setupCamera.SetCamera(_grid.Width, _grid.Height, _isVertical);
         }
 
         public void CreateBoard()
@@ -45,9 +53,10 @@ namespace Game.Board
         }
 
         [Inject]
-        private void Construct(Grid grid)
+        private void Construct(IGrid grid, SetupCamera setupCamera)
         {
             _grid = grid;
+            _setupCamera = setupCamera;
         }
 
 
