@@ -2,11 +2,7 @@
 
 namespace Game.Utils
 {
-<<<<<<< HEAD
     public class SetupCamera : ISetupCamera
-=======
-    public class SetupCamera
->>>>>>> ObjectPool
     {
         private bool _isVertical;
 
