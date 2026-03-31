@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Tiles
 {
-    [CreateAssetMenu(fileName = "TileSetConfig", menuName = "Config/TileSetConfig")]
+    [CreateAssetMenu(fileName = "TileSetConfig", menuName = "Configs/TileSetConfig")]
     public class TileSetConfig : ScriptableObject
     {
         [SerializeField] private List<TileConfig> _set = new List<TileConfig>();

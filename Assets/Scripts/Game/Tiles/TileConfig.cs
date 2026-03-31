@@ -3,15 +3,12 @@ using UnityEngine;
 namespace Game.Tiles
 {
 
-    [CreateAssetMenu(fileName = "TileConfig", menuName = "Config/TileConfig")]
+    [CreateAssetMenu(fileName = "TileConfig", menuName = "Configs/TileConfig")]
     public class TileConfig : ScriptableObject
     {
-        [SerializeField] 
-        private Sprite _sprite;
-        [SerializeField] 
-        private TileKind _tileKind;
-        [SerializeField] 
-        private bool _isInteractable;
+        [SerializeField] private Sprite _sprite;
+        [SerializeField] private TileKind _tileKind;
+        [SerializeField] private bool _isInteractable;
 
         public Sprite Sprite => _sprite;
         public TileKind TileKind => _tileKind; 

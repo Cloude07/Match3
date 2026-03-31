@@ -12,23 +12,19 @@ namespace DI
 {
     public class GameScop : LifetimeScope
     {
-        [SerializeField]
-        private GameBoard _gameBoard;
-        [SerializeField]
-        private GameResourcesLoader _resourcesLoader;
-        [SerializeField]
-        private BlankTilesSetup _blankTilesSetup;
+        [SerializeField] private GameBoard _gameBoard;
+        [SerializeField] private GameResourcesLoader _resourcesLoader;
 
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterInstance(_gameBoard);
             builder.RegisterInstance(_resourcesLoader);
-            builder.RegisterInstance(_blankTilesSetup);
 
             builder.Register<IGrid,Grid>(Lifetime.Singleton);
-            builder.Register<GameDebug>(Lifetime.Singleton);
             builder.Register<ISetupCamera, SetupCamera>(Lifetime.Singleton);
+            builder.Register<GameDebug>(Lifetime.Singleton);
             builder.Register<TilePool>(Lifetime.Singleton);
+            builder.Register<BlankTilesSetup>(Lifetime.Singleton);
         }
     }
 }

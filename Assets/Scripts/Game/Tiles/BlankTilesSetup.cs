@@ -1,21 +1,17 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using Levels;
 
 namespace Game.Tiles
 {
-    public class BlankTilesSetup : MonoBehaviour
+    public class BlankTilesSetup
     {
-        [SerializeField]
-        private List<BlankTile> _blankTilesLayout;
         public bool[,] Blanks { get; private set; }
 
-        public void SetupBlanks(int width, int height)
+        public void SetupBlanks(LevelConfig levelConfig)
         {
-            Blanks = new bool[width, height];
-            for (int i = 0; i < _blankTilesLayout.Count; i++)
-                Blanks[_blankTilesLayout[i].XPosition,
-                    _blankTilesLayout[i].YPosition] = true;
-
+            Blanks = new bool[levelConfig.Width, levelConfig.Height];
+            for (int i = 0; i < levelConfig.BlankTilesLayout.Count; i++)
+                Blanks[levelConfig.BlankTilesLayout[i].XPosition,
+                    levelConfig.BlankTilesLayout[i].YPosition] = true;
         }
 
     }

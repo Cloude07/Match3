@@ -461,10 +461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 204a222333e41914896e46473f8dd4f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Game.Board.GameBoard
-  _tilePrefab: {fileID: 7398622418354616533, guid: 9a37b4320b30f3f4e9b194a93182e2f1, type: 3}
   _tileConfig: {fileID: 11400000, guid: 35304b0fd56ced841b14444d7be6626b, type: 2}
-  _isVertical: 1
-  _sizeBoard: {x: 10, y: 10}
+  _isVertical: 0
+  _isDebug: 0
+  _levelConfig: {fileID: 11400000, guid: d4e12fc3dbc2f734f8f336a3d5c4c356, type: 2}
 --- !u!4 &883309608
 Transform:
   m_ObjectHideFlags: 0
@@ -541,6 +541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourcesLoading.GameResourcesLoader
   _tilePrefab: {fileID: 7398622418354616533, guid: 9a37b4320b30f3f4e9b194a93182e2f1, type: 3}
+  _blankPrefab: {fileID: 7398622418354616533, guid: 31aaf00947dac624791a3e1c64d2584f, type: 3}
+  _blankConfig: {fileID: 11400000, guid: 09964a5bc5d7aab4caecd9188eea6a4f, type: 2}
   _tileSetConfig: {fileID: 11400000, guid: 7a296025109b4ff409e32a0febec8653, type: 2}
 --- !u!4 &1462935534
 Transform:

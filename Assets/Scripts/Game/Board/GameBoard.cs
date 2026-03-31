@@ -1,6 +1,7 @@
 ﻿using Game.GridSystem;
 using Game.Tiles;
 using Game.Utils;
+using Levels;
 using System.Collections.Generic;
 using UnityEngine;
 using VContainer;
@@ -10,14 +11,11 @@ namespace Game.Board
     public class GameBoard : MonoBehaviour
     {
         [Header("Test")]
-        [SerializeField]
-        private TileConfig _tileConfig;
-        [SerializeField]
-        private bool _isVertical = false;
-        [SerializeField]
-        private Vector2 _sizeBoard;
-        [SerializeField]
-        private bool _isDebug = false;
+        [SerializeField] private TileConfig _tileConfig;
+        [SerializeField] private bool _isVertical = false;
+
+        [SerializeField] private bool _isDebug = false;
+        [SerializeField] private LevelConfig _levelConfig;
 
         private readonly List<Tile> _tilesToRefill = new List<Tile>();
 
@@ -30,8 +28,8 @@ namespace Game.Board
 
         private void Start()
         {
-            _grid.SetupGrid((int)_sizeBoard.x, (int)_sizeBoard.y);
-            _blankTilesSetup.SetupBlanks((int)_sizeBoard.x, (int)_sizeBoard.y);
+            _grid.SetupGrid(_levelConfig.Width, _levelConfig.Height);
+            _blankTilesSetup.SetupBlanks(_levelConfig);
             CreateBoard();
             _setupCamera.SetCamera(_grid.Width, _grid.Height, _isVertical);
             if (_isDebug)
