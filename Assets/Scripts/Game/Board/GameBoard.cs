@@ -27,14 +27,13 @@ namespace Game.Board
         private TilePool _tilePool;
         private InputReader _inputReader;
 
-        private void Start()
+        private void Awake()
         {
             _inputReader = new InputReader();
             _inputReader.EnableInputs(true);
 
             _grid.SetupGrid(_levelConfig.Width, _levelConfig.Height);
             _blankTilesSetup.SetupBlanks(_levelConfig);
-            CreateBoard();
             _setupCamera.SetCamera(_grid.Width, _grid.Height, _isVertical);
             if (_isDebug)
                 _gameDebug.ShowwDebug(transform);
