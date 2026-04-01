@@ -59,6 +59,7 @@ namespace Game.MatchTiles
             connectedTiles.Add(tile);
             var tileGridPos = grid.WorldToGrid(
                 tile.gameObject.transform.position);
+        //удаление по Horizontal
 
             CheckDirection(tileGridPos, Vector2Int.right, grid,
                 tile, connectedTiles);

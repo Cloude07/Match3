@@ -3,6 +3,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Game.GridSystem;
 using Game.MatchTiles;
+using Game.Score;
 using Game.Tiles;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,12 @@ namespace GameStateMachine.States
         private MatchFinder _matchFinder;
         private TilePool _tilePool;
         private readonly Transform _parent;
+        private GameProgress _gameProgress;
 
         private List<Vector2Int> _tilesToRefillPos = new List<Vector2Int>();
 
         public RefillGridState(IGrid grid, IStateSwitcher stateSwitcher, IAnimation animation,
-            MatchFinder matchFinder, TilePool tilePool, Transform parent)
+            MatchFinder matchFinder, TilePool tilePool, Transform parent, GameProgress gameProgress)
         {
             _grid = grid;
             _stateSwitcher = stateSwitcher;
@@ -32,13 +34,14 @@ namespace GameStateMachine.States
             _matchFinder = matchFinder;
             _tilePool = tilePool;
             _parent = parent;
+            _gameProgress = gameProgress;
         }
 
         public async void Enter()
         {
             await FallTiles();
             await RefillGrid();
-            if(_matchFinder.CheckBoardForMatches(_grid))
+            if (_matchFinder.CheckBoardForMatches(_grid))
             {
                 _stateSwitcher.SwitchState<RemoveTilesState>();
 
@@ -48,8 +51,6 @@ namespace GameStateMachine.States
                 CheckEndGame();
             }
         }
-
-
 
         public void Exit()
         {
@@ -102,12 +103,12 @@ namespace GameStateMachine.States
                 {
                     if (_grid.GetValue(x, y) != null)
                         continue;
-                  var tile = _tilePool.GetTile(_grid.GridToWorld(x, y), _parent);
+                    var tile = _tilePool.GetTile(_grid.GridToWorld(x, y), _parent);
                     tile.gameObject.SetActive(true);
-                    _grid.SetValue(x,y, tile);
+                    _grid.SetValue(x, y, tile);
                     _animation.Reveal(tile.gameObject, 0.2f);
 
-                 
+
                 }
                 await UniTask.Delay(TimeSpan.FromSeconds(0.1f), _cts.IsCancellationRequested);
             }
@@ -116,7 +117,12 @@ namespace GameStateMachine.States
 
         private void CheckEndGame()
         {
-            _stateSwitcher.SwitchState<PlayerTurnState>();
+            if (_gameProgress.CheckGoalScore())
+                _stateSwitcher.SwitchState<WinState>();
+            else if (_gameProgress.Moves <= 0)
+                _stateSwitcher.SwitchState<LoseState>();
+            else
+                _stateSwitcher.SwitchState<PlayerTurnState>();
         }
     }
 }

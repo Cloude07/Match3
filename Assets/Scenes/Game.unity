@@ -556,6 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EntryPoint.EntryPoint
   _gameBoard: {fileID: 883309607}
+  _levelConfig: {fileID: 11400000, guid: d4e12fc3dbc2f734f8f336a3d5c4c356, type: 2}
 --- !u!1 &1462935532
 GameObject:
   m_ObjectHideFlags: 0
