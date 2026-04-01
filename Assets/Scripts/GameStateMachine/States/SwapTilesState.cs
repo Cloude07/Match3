@@ -2,6 +2,7 @@
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Game.GridSystem;
+using Game.MatchTiles;
 using Game.Tiles;
 using System;
 using System.Threading;
@@ -15,12 +16,14 @@ namespace GameStateMachine.States
         private IGrid _grid;
         private IStateSwitcher _stateSwitcher;
         private IAnimation _animation;
+        private MatchFinder _matchFinder;
 
-        public SwapTilesState(IGrid grid, IStateSwitcher stateSwitcher, IAnimation animation)
+        public SwapTilesState(IGrid grid, IStateSwitcher stateSwitcher, IAnimation animation, MatchFinder matchFinder)
         {
             _grid = grid;
             _stateSwitcher = stateSwitcher;
             _animation = animation;
+            _matchFinder = matchFinder;
         }
 
         public void Dispose() =>
@@ -31,8 +34,16 @@ namespace GameStateMachine.States
         {
             _cts = new CancellationTokenSource();
             await SwapTiles(_grid.CurrentPosition, _grid.TargetPosition);
-
-            _stateSwitcher.SwitchState<PlayerTurnState>();
+            if(_matchFinder.CheckBoardForMatches(_grid) == false)
+            {
+                await SwapTiles(_grid.TargetPosition, _grid.CurrentPosition);
+                _stateSwitcher.SwitchState<PlayerTurnState>();
+            }
+            else
+            {
+                _stateSwitcher.SwitchState<RemoveTilesState>();
+            }
+           
         }
 
         public void Exit() =>
