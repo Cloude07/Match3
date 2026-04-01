@@ -22,7 +22,7 @@ namespace Animation
         public async UniTask HideTile(GameObject target)
         {
             _cts = new CancellationTokenSource();
-            await target.transform.DOScale(Vector3.zero, 0.04f)
+             target.transform.DOScale(Vector3.zero, 0.04f)
                  .SetEase(Ease.OutBounce);
             target.SetActive(false);
             target.transform.localScale = Vector3.one;
