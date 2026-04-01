@@ -93,7 +93,7 @@ namespace GameStateMachine.States
 
         private bool IsBlankPosition(Vector2Int gridPos) =>
             _grid.GetValue(gridPos.x, gridPos.y)
-            .TileConfi.TileKind == TileKind.Blank;
+            .TileConfig.TileKind == TileKind.Blank;
 
 
         private bool IsValidPosition(Vector2Int gridPos) =>

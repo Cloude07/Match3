@@ -60,7 +60,7 @@ namespace GameStateMachine.States
 
         private void PlaySond()
         {
-            throw new NotImplementedException();
+            
         }
 
     }

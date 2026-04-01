@@ -1,6 +1,7 @@
 ﻿using Animation;
 using Game.Board;
 using Game.GridSystem;
+using Game.MatchTiles;
 using Game.Tiles;
 using Game.Utils;
 using ResourcesLoading;
@@ -26,6 +27,7 @@ namespace DI
             builder.Register<GameDebug>(Lifetime.Singleton);
             builder.Register<TilePool>(Lifetime.Singleton);
             builder.Register<BlankTilesSetup>(Lifetime.Singleton);
+            builder.Register<MatchFinder>(Lifetime.Singleton);
         }
     }
 }
