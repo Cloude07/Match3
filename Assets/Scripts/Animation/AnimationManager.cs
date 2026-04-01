@@ -10,7 +10,6 @@ namespace Animation
     public class AnimationManager : IAnimation, IDisposable
     {
         private CancellationTokenSource _cts;
-
         public async UniTask Reveal(GameObject target, float delay)
         {
             _cts = new CancellationTokenSource();
