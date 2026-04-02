@@ -5,21 +5,17 @@ using System.Threading;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
+using VContainer;
 
 namespace SceneLoading
 {
-    public class AsyncSceneLoading : IAsyncSceneLoading, IDisposable
+    public class AsyncSceneLoading : IAsyncSceneLoading
     {
        private readonly Dictionary<string, SceneInstance> _loadedScence = 
             new Dictionary<string, SceneInstance>();
 
         private LoadingView _loadingView;
         private CancellationTokenSource _cts;
-
-        public void Dispose()
-        {
-            _cts?.Dispose();
-        }
 
         public async UniTask LoadAsync(string sceneName)
         {
@@ -37,9 +33,9 @@ namespace SceneLoading
             _cts.Cancel();
         }
 
-        public void LoadingIsDone(bool isValue)
+        public void LoadingIsDone(bool value)
         {
-            _loadingView.SetActiveScreen(isValue != true);
+            _loadingView.SetActiveScreen(value != true);
         }
 
         public async UniTask UnloadAsync(string sceneName)
@@ -47,9 +43,16 @@ namespace SceneLoading
             _cts = new CancellationTokenSource();
             var sceneInstance = _loadedScence[sceneName];
             await Addressables.UnloadSceneAsync(sceneInstance)
-                .WithCancellation(_cts.Token).AsValueTask();
+                .WithCancellation(_cts.Token).AsUniTask();
             _loadedScence.Remove(sceneName);
-            _cts?.Cancel();
+            _cts.Cancel();
         }
+
+        [Inject]
+        private void Construct(LoadingView loadingView)
+        {
+           _loadingView = loadingView;
+        }
+
     }
 }

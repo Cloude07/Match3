@@ -106,7 +106,7 @@ namespace GameStateMachine.States
                     var tile = _tilePool.GetTile(_grid.GridToWorld(x, y), _parent);
                     tile.gameObject.SetActive(true);
                     _grid.SetValue(x, y, tile);
-                    _animation.Reveal(tile.gameObject, 0.2f);
+                    await _animation.Reveal(tile.gameObject, 0.2f);
 
 
                 }
