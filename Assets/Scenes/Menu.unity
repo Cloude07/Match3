@@ -406,6 +406,56 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &622115539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622115541}
+  - component: {fileID: 622115540}
+  m_Layer: 0
+  m_Name: GameSystemScripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &622115540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622115539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb3b04d0029b60448368b769f49e9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.UI.LevelSeguenceView
+  _levelButtons:
+  - {fileID: 800767075}
+  - {fileID: 1376970887}
+  - {fileID: 1474892975}
+  - {fileID: 716412277}
+  - {fileID: 1591581395}
+--- !u!4 &622115541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622115539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.08294, y: 0.37492, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676826675
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +556,7 @@ GameObject:
   - component: {fileID: 716412276}
   - component: {fileID: 716412275}
   - component: {fileID: 716412274}
+  - component: {fileID: 716412277}
   m_Layer: 5
   m_Name: Level4
   m_TagString: Untagged
@@ -615,6 +666,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716412272}
   m_CullTransparentMesh: 1
+--- !u!114 &716412277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716412272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e63b80e75278148aec9b80633eab05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.UI.StartLevelButton
+  _lebel: {fileID: 1248801064}
+  _button: {fileID: 716412274}
 --- !u!1 &751740832
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +759,7 @@ GameObject:
   - component: {fileID: 800767074}
   - component: {fileID: 800767073}
   - component: {fileID: 800767072}
+  - component: {fileID: 800767075}
   m_Layer: 5
   m_Name: Level1
   m_TagString: Untagged
@@ -803,6 +869,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800767070}
   m_CullTransparentMesh: 1
+--- !u!114 &800767075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800767070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e63b80e75278148aec9b80633eab05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.UI.StartLevelButton
+  _lebel: {fileID: 820617903}
+  _button: {fileID: 800767072}
 --- !u!1 &820617901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,6 +1169,7 @@ GameObject:
   - component: {fileID: 1376970886}
   - component: {fileID: 1376970885}
   - component: {fileID: 1376970884}
+  - component: {fileID: 1376970887}
   m_Layer: 5
   m_Name: Level2
   m_TagString: Untagged
@@ -1198,6 +1279,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376970882}
   m_CullTransparentMesh: 1
+--- !u!114 &1376970887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376970882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e63b80e75278148aec9b80633eab05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.UI.StartLevelButton
+  _lebel: {fileID: 1690106226}
+  _button: {fileID: 1376970884}
 --- !u!1 &1462807607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1384,7 @@ GameObject:
   - component: {fileID: 1474892974}
   - component: {fileID: 1474892973}
   - component: {fileID: 1474892972}
+  - component: {fileID: 1474892975}
   m_Layer: 5
   m_Name: Level3
   m_TagString: Untagged
@@ -1398,6 +1494,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474892970}
   m_CullTransparentMesh: 1
+--- !u!114 &1474892975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474892970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e63b80e75278148aec9b80633eab05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.UI.StartLevelButton
+  _lebel: {fileID: 1708194102}
+  _button: {fileID: 1474892972}
 --- !u!1 &1591581390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1520,7 @@ GameObject:
   - component: {fileID: 1591581394}
   - component: {fileID: 1591581393}
   - component: {fileID: 1591581392}
+  - component: {fileID: 1591581395}
   m_Layer: 5
   m_Name: Level5
   m_TagString: Untagged
@@ -1519,6 +1630,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1591581390}
   m_CullTransparentMesh: 1
+--- !u!114 &1591581395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591581390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e63b80e75278148aec9b80633eab05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Menu.UI.StartLevelButton
+  _lebel: {fileID: 2026306905}
+  _button: {fileID: 1591581392}
 --- !u!1 &1690106224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,7 +2204,10 @@ MonoBehaviour:
   parentReference:
     TypeName: DI.RootScope
   autoRun: 1
-  autoInjectGameObjects: []
+  autoInjectGameObjects:
+  - {fileID: 751740832}
+  - {fileID: 622115539}
+  _seguenceView: {fileID: 622115540}
 --- !u!4 &1882754378
 Transform:
   m_ObjectHideFlags: 0
@@ -2279,3 +2407,4 @@ SceneRoots:
   - {fileID: 1765654818}
   - {fileID: 1462807610}
   - {fileID: 1882754378}
+  - {fileID: 622115541}
