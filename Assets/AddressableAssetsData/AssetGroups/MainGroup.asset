@@ -15,6 +15,16 @@ MonoBehaviour:
   m_GroupName: MainGroup
   m_GUID: d9ab553d7dc471747882596b1447c3dc
   m_SerializeEntries:
+  - m_GUID: 59ab110d09835244eb5c36c797a13eab
+    m_Address: Levels1-5
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60e7558fcb0572543bdc70763dac0688
+    m_Address: Levels6-10
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6f39fe47fd7dfe74b8d2e555e982d6f7
     m_Address: Menu
     m_ReadOnly: 0
