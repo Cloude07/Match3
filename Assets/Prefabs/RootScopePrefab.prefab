@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5636544298333954930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3107062849639643911}
+  - component: {fileID: 2419304630226486925}
+  m_Layer: 0
+  m_Name: RootScopePrefab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3107062849639643911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636544298333954930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.66532, y: 0.64482, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4375668415238372787}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2419304630226486925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5636544298333954930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f65e4081517fc4fb67d9c6852f85dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DI.RootScope
+  parentReference:
+    TypeName: 
+  autoRun: 1
+  autoInjectGameObjects: []
+  _loadingView: {fileID: 2426830718310123558}
+--- !u!1001 &5614009774285514742
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3107062849639643911}
+    m_Modifications:
+    - target: {fileID: 3862828301225964603, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_Name
+      value: LoadingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+--- !u!114 &2426830718310123558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7801692004902662096, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+  m_PrefabInstance: {fileID: 5614009774285514742}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaebe772dc810654dafb77650e0069d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoading.LoadingView
+--- !u!4 &4375668415238372787 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8165456139517303365, guid: b5c0e00ae034fbd438fa934bfeacd627, type: 3}
+  m_PrefabInstance: {fileID: 5614009774285514742}
+  m_PrefabAsset: {fileID: 0}

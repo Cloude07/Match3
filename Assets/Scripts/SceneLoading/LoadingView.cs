@@ -8,5 +8,8 @@ namespace SceneLoading
         [SerializeField] private GameObject _loadingScreen;
         public void SetActiveScreen(bool value) =>
             _loadingScreen.SetActive(value);
+
+
+ 
     }
 }
