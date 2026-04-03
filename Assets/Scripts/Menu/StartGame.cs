@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Menu
 {
-    public class StartGame : IDisposable
+    public class StartGame 
     {
         private GameData _gameData;
         private AudioManager _audioManager;
@@ -21,10 +21,6 @@ namespace Menu
             _asyncSceneLoading = asyncSceneLoading;
         }
 
-        public void Dispose()
-        {
-            _cts?.Dispose();
-        }
 
         public async void Start(LevelConfig level)
         {
@@ -35,7 +31,7 @@ namespace Menu
             await _asyncSceneLoading.UnloadAsync(Scenes.MENU);
             await _asyncSceneLoading.LoadAsync(Scenes.GAME);
             _audioManager.PlayGameMusic();
-            _cts?.Cancel();
+            _cts.Cancel();
         }
     }
 }

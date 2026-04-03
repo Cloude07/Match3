@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Game.Score
 {
@@ -32,7 +31,6 @@ namespace Game.Score
         {
             Moves--;
             OnMove?.Invoke();
-            Debug.Log($"{Moves} to loose");
         }
     }
 }
