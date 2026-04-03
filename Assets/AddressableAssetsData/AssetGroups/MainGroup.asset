@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: MainGroup
   m_GUID: d9ab553d7dc471747882596b1447c3dc
   m_SerializeEntries:
+  - m_GUID: 4790463b3e752f24ab1d22f58c6b383d
+    m_Address: AudioMixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 59ab110d09835244eb5c36c797a13eab
     m_Address: Levels1-5
     m_ReadOnly: 0

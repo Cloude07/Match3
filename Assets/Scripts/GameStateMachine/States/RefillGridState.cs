@@ -1,4 +1,5 @@
 ﻿using Animation;
+using Audio;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Game.GridSystem;
@@ -22,11 +23,13 @@ namespace GameStateMachine.States
         private TilePool _tilePool;
         private readonly Transform _parent;
         private GameProgress _gameProgress;
+        private AudioManager _audioManager;
 
         private List<Vector2Int> _tilesToRefillPos = new List<Vector2Int>();
 
         public RefillGridState(IGrid grid, IStateSwitcher stateSwitcher, IAnimation animation,
-            MatchFinder matchFinder, TilePool tilePool, Transform parent, GameProgress gameProgress)
+            MatchFinder matchFinder, TilePool tilePool, Transform parent, GameProgress gameProgress,
+            AudioManager audioManager)
         {
             _grid = grid;
             _stateSwitcher = stateSwitcher;
@@ -35,6 +38,7 @@ namespace GameStateMachine.States
             _tilePool = tilePool;
             _parent = parent;
             _gameProgress = gameProgress;
+            _audioManager = audioManager;
         }
 
         public async void Enter()
@@ -44,10 +48,11 @@ namespace GameStateMachine.States
             if (_matchFinder.CheckBoardForMatches(_grid))
             {
                 _stateSwitcher.SwitchState<RemoveTilesState>();
-
+                _audioManager.PlayMatch();
             }
             else
             {
+                _audioManager.PlayNoMatch();
                 CheckEndGame();
             }
         }
@@ -89,8 +94,8 @@ namespace GameStateMachine.States
                     }
                 }
             }
-
             await UniTask.Delay(TimeSpan.FromSeconds(0.3f), _cts.IsCancellationRequested);
+            _audioManager.PlayWhoosh();
             _cts.Cancel();
         }
 
@@ -111,6 +116,7 @@ namespace GameStateMachine.States
 
                 }
                 await UniTask.Delay(TimeSpan.FromSeconds(0.1f), _cts.IsCancellationRequested);
+                _audioManager.PlayPop();
             }
             _cts.Cancel();
         }

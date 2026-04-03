@@ -1,4 +1,5 @@
 ﻿using Animation;
+using Audio;
 using Game.Board;
 using Game.GridSystem;
 using Game.MatchTiles;
@@ -22,9 +23,11 @@ namespace GameStateMachine
         private TilePool _tilePool;
         private GameProgress _gameProgress;
         private ScoreCalculator _scoreCalculator;
+        private AudioManager _audioManager;
 
         public StateMachine(GameBoard gameBoard, IGrid grid, IAnimation animation,
-            MatchFinder matchFinder, TilePool tilePool, GameProgress gameProgress, ScoreCalculator scoreCalculator)
+            MatchFinder matchFinder, TilePool tilePool, GameProgress gameProgress, 
+            ScoreCalculator scoreCalculator, AudioManager audioManager)
         {
             _gameBoard = gameBoard;
             _grid = grid;
@@ -33,17 +36,19 @@ namespace GameStateMachine
             _tilePool = tilePool;
             _gameProgress = gameProgress;
             _scoreCalculator = scoreCalculator;
+            _audioManager = audioManager;
 
             _states = new List<IState>()
             {
                 new PrepareState(this, _gameBoard),
-                new PlayerTurnState(_grid, this, _animation),
-                new SwapTilesState(_grid, this, _animation, _matchFinder, _gameProgress),
-                new RemoveTilesState(_grid, this, _animation, _matchFinder, _scoreCalculator),
+                new PlayerTurnState(_grid, this, _animation, _audioManager),
+                new SwapTilesState(_grid, this, _animation, _matchFinder, _gameProgress, _audioManager),
+                new RemoveTilesState(_grid, this, _animation, _matchFinder, _scoreCalculator, _audioManager),
                 new RefillGridState(_grid, this, _animation, _matchFinder, _tilePool,
-                _gameBoard.transform, _gameProgress),
-                new WinState(),
-                new LoseState()
+                _gameBoard.transform, _gameProgress, _audioManager),
+
+                new WinState(_audioManager),
+                new LoseState(_audioManager)
             };
             _currentState = _states[0];
             _currentState.Enter();

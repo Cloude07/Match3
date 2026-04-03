@@ -1,4 +1,5 @@
 ﻿using Animation;
+using Audio;
 using Game.GridSystem;
 using Game.Tiles;
 using Input;
@@ -15,14 +16,17 @@ namespace GameStateMachine.States
         private readonly IStateSwitcher _stateSwitcher;
         private readonly Camera _camera;
         private IAnimation _animation;
+        private AudioManager _audioManager;
 
-        public PlayerTurnState( IGrid grid, IStateSwitcher stateSwitcher, IAnimation animation)
+        public PlayerTurnState( IGrid grid, IStateSwitcher stateSwitcher,
+            IAnimation animation, AudioManager audioManager)
         {
             _inputReader = new InputReader();
             _grid = grid;
             _stateSwitcher = stateSwitcher;
             _animation = animation;
             _camera = Camera.main;
+            _audioManager = audioManager;
             _inputReader.Click += OnTileClick;
         }
 
@@ -51,13 +55,13 @@ namespace GameStateMachine.States
                 return;
             if (_grid.CurrentPosition == _emptyPosition)
             {
-                PlaySound();
+                _audioManager.PlayClick();
                 _grid.SetCurrentPosition(clickPosition);
                 OnAnimateTile(1.2f);
             }
             else if (_grid.CurrentPosition == clickPosition)
             {
-                PlaySound();
+                _audioManager.PlayDeselect();
                 DeselectTile();
             }
             else if (_grid.CurrentPosition != clickPosition
@@ -79,11 +83,6 @@ namespace GameStateMachine.States
             OnAnimateTile(1f);
             _grid.SetCurrentPosition(_emptyPosition);
             _grid.SetTargerPosition(_emptyPosition);
-        }
-
-        private void PlaySound()
-        {
-
         }
 
         private bool IsSwappable(Vector2Int currentTilePos, Vector2Int targetTilePos) =>

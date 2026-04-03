@@ -1,4 +1,5 @@
 ﻿using Animation;
+using Audio;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Game.GridSystem;
@@ -19,15 +20,18 @@ namespace GameStateMachine.States
         private IAnimation _animation;
         private MatchFinder _matchFinder;
         private GameProgress _gameProgress;
+        private AudioManager _audioManager;
 
         public SwapTilesState(IGrid grid, IStateSwitcher stateSwitcher, 
-            IAnimation animation, MatchFinder matchFinder, GameProgress gameProgress)
+            IAnimation animation, MatchFinder matchFinder, 
+            GameProgress gameProgress, AudioManager audioManager)
         {
             _grid = grid;
             _stateSwitcher = stateSwitcher;
             _animation = animation;
             _matchFinder = matchFinder;
             _gameProgress = gameProgress;
+            _audioManager = audioManager;
         }
 
         public void Dispose() =>
@@ -37,14 +41,17 @@ namespace GameStateMachine.States
         public async void Enter()
         {
             _cts = new CancellationTokenSource();
+            _audioManager.PlayWhoosh();
             await SwapTiles(_grid.CurrentPosition, _grid.TargetPosition);
             if(_matchFinder.CheckBoardForMatches(_grid) == false)
             {
+                _audioManager.PlayNoMatch();
                 await SwapTiles(_grid.TargetPosition, _grid.CurrentPosition);
                 _stateSwitcher.SwitchState<PlayerTurnState>();
             }
             else
             {
+                _audioManager.PlayMatch();
                 _gameProgress.SpendMoves();
                 _stateSwitcher.SwitchState<RemoveTilesState>();
             }
