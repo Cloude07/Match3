@@ -1,8 +1,10 @@
 ﻿using Game.Board;
+using Game.EntryPoint;
 using Game.GridSystem;
 using Game.MatchTiles;
 using Game.Score;
 using Game.Tiles;
+using Game.UI;
 using Game.Utils;
 using ResourcesLoading;
 using UnityEngine;
@@ -16,11 +18,14 @@ namespace DI
     {
         [SerializeField] private GameBoard _gameBoard;
         [SerializeField] private GameResourcesLoader _resourcesLoader;
+        [SerializeField] private EndGamePanelView _endGamePanelView;
 
         protected override void Configure(IContainerBuilder builder)
         {
+            builder.RegisterEntryPoint<GameEntryPoint>();
             builder.RegisterInstance(_gameBoard);
             builder.RegisterInstance(_resourcesLoader);
+            builder.RegisterInstance(_endGamePanelView);
             builder.Register<IGrid, Grid>(Lifetime.Singleton);
             builder.Register<ISetupCamera, SetupCamera>(Lifetime.Singleton);
             builder.Register<GameDebug>(Lifetime.Singleton);
@@ -29,6 +34,7 @@ namespace DI
             builder.Register<MatchFinder>(Lifetime.Singleton);
             builder.Register<GameProgress>(Lifetime.Singleton);
             builder.Register<ScoreCalculator>(Lifetime.Singleton);
+            builder.Register<EndGame>(Lifetime.Singleton);
         }
     }
 }

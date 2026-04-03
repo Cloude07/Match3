@@ -1,20 +1,21 @@
-﻿using Audio;
-using UnityEngine;
+﻿
+using Game.UI;
 
 namespace GameStateMachine.States
 {
     public class LoseState : IState
     {
-        private AudioManager _audioManager;
+        private EndGamePanelView _endGamePanelView;
 
-        public LoseState(AudioManager audioManager)
+        public LoseState(EndGamePanelView endGamePanelView)
         {
-            _audioManager = audioManager;
+            _endGamePanelView = endGamePanelView;
         }
 
         public void Enter()
         {
-           _audioManager.PlayLose();
+            _endGamePanelView.ShowEndGamePanel(false);
+       
         }
 
         public void Exit()

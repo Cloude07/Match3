@@ -5,7 +5,6 @@ namespace Game.Score
 {
     public class GameProgress
     {
-
         public event Action OnScoreChanged;
         public event Action OnMove;
         public int Score { get; private set; }
