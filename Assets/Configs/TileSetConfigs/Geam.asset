@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fea40ffb685914b977752b82c85a37, type: 3}
+  m_Name: Geam
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Tiles.TileSetConfig
+  _set:
+  - {fileID: 11400000, guid: 093aa494dc6653243ad5f3bc49ff4ad7, type: 2}
+  - {fileID: 11400000, guid: 15d7c73c23b9faa4d940b578866523b3, type: 2}
+  - {fileID: 11400000, guid: c16944fe961d058479b888c1a8bf991e, type: 2}
+  - {fileID: 11400000, guid: eec431aa6308fcf4bb21789c386d31eb, type: 2}
+  - {fileID: 11400000, guid: 8448c7f049c043e4687b262329715554, type: 2}

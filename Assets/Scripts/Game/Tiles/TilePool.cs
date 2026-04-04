@@ -34,7 +34,7 @@ namespace Game.Tiles
 
         public Tile CreateBlankTile(Vector3 position, Transform parant)
         {
-            var blankPrefab = _objectResolver.Instantiate(_gameResourcesLoader.BlankPrefab, 
+            var blankPrefab = _objectResolver.Instantiate(_gameResourcesLoader.TilePrefab, 
                 position, Quaternion.identity, parant);
 
             var blamkTile = blankPrefab.GetComponent<Tile>();
