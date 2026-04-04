@@ -11,15 +11,13 @@ using Game.Utils;
 using GameStateMachine;
 using Levels;
 using ResourcesLoading;
-using UnityEngine;
-using VContainer;
 using VContainer.Unity;
 
 namespace Game.EntryPoint
 {
     public class GameEntryPoint : IInitializable
     {
-        //bg tile setup
+        private BackgroundTilesSetup _backgroundTilesSetup;
         private LevelConfig _levelConfig;
         private BlankTilesSetup _blankTilesSetup;
         private StateMachine _stateMachine;
@@ -35,7 +33,7 @@ namespace Game.EntryPoint
         private IAnimation _animation;
         private GameResourcesLoader _gameResourcesLoader;
         private ISetupCamera _setupCamera;
-        //FX pool
+        private FXPool _fxPool;
         private IAsyncSceneLoading _asyncSceneLoading;
         private EndGamePanelView _endGamePanelView;
 
@@ -46,7 +44,8 @@ namespace Game.EntryPoint
             GameProgress gameProgress, ScoreCalculator scoreCalculator, 
             MatchFinder matchFinder, IGrid grid, GameBoard gameBoard, GameDebug gameDebug, TilePool tilePool,
             GameData gameData, AudioManager audioManager, IAnimation animation, GameResourcesLoader gameResourcesLoader, 
-            ISetupCamera setupCamera, IAsyncSceneLoading asyncSceneLoading, EndGamePanelView endGamePanelView)
+            ISetupCamera setupCamera, IAsyncSceneLoading asyncSceneLoading, EndGamePanelView endGamePanelView,
+            BackgroundTilesSetup backgroundTilesSetup, FXPool fXPool)
         {
             _blankTilesSetup = blankTilesSetup;
             _gameProgress = gameProgress;
@@ -63,6 +62,8 @@ namespace Game.EntryPoint
             _setupCamera = setupCamera;
             _asyncSceneLoading = asyncSceneLoading;
             _endGamePanelView = endGamePanelView;
+            _backgroundTilesSetup = backgroundTilesSetup;
+            _fxPool = fXPool;
         }
 
         public void Initialize()
@@ -77,7 +78,9 @@ namespace Game.EntryPoint
             _setupCamera.SetCamera(_grid.Width, _grid.Height, _isVertical);
             _blankTilesSetup.SetupBlanks(_levelConfig);
             _stateMachine = new StateMachine(_gameBoard, _grid, _animation, _matchFinder,
-                _tilePool, _gameProgress, _scoreCalculator, _audioManager, _endGamePanelView);
+                _tilePool, _gameProgress, _scoreCalculator, _audioManager, _endGamePanelView,
+                _backgroundTilesSetup, _blankTilesSetup, _levelConfig, _fxPool);
+
             _asyncSceneLoading.LoadingIsDone(true);
         }
     }
