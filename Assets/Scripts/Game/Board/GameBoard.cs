@@ -2,8 +2,6 @@
 using Game.GridSystem;
 using Game.MatchTiles;
 using Game.Tiles;
-using Game.Utils;
-using Levels;
 using System.Collections.Generic;
 using UnityEngine;
 using VContainer;
@@ -12,7 +10,6 @@ namespace Game.Board
 {
     public class GameBoard : MonoBehaviour
     {
-
         private readonly List<Tile> _tilesToRefill = new List<Tile>();
         private BlankTilesSetup _blankTilesSetup;
         private IGrid _grid;

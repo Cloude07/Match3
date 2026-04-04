@@ -19,7 +19,7 @@ namespace Game.Utils
         private float GetOrthoSize(int width, int height)
         {
             return _isVertical ? (width + 12f) * Screen.height / Screen.width * 0.5f
-                : (height + 3f) * Screen.height / Screen.width;
+                : (height + 2f) * Screen.height / Screen.width;
         }
     }
 }
