@@ -13,60 +13,55 @@ MonoBehaviour:
   m_Name: GemPack
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: GemPack
-  m_GUID: 529baa44482afc6419299454e9d99904
+  m_GUID: 9da193cc56d0cce43acab31d5fabaedf
   m_SerializeEntries:
   - m_GUID: 000f1050047d09c49b863b22d81b7796
-    m_Address: YellowGem
+    m_Address: Assets/Sprite/Set2/YellowGem.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 093aa494dc6653243ad5f3bc49ff4ad7
-    m_Address: BlueGem
+    m_Address: Assets/Configs/Tiles/Set2/BlueGem.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 15d7c73c23b9faa4d940b578866523b3
-    m_Address: OrangeGem
+    m_Address: Assets/Configs/Tiles/Set2/OrangeGem.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31bcd506d5c9e514f9f0e7b3de4e1b96
-    m_Address: RedGem
+    m_Address: Assets/Sprite/Set2/RedGem.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 49a02b650a9506946acf0fad965bf898
-    m_Address: BlueGem
+    m_Address: Assets/Sprite/Set2/BlueGem.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6060892cd741d1b468e0ccf3430c34e3
-    m_Address: PurpleGem
+    m_Address: Assets/Sprite/Set2/PurpleGem.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7de5a3ed098ef0e46a71a36fdc208ad9
-    m_Address: OrangeGem
+    m_Address: Assets/Sprite/Set2/OrangeGem.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8448c7f049c043e4687b262329715554
-    m_Address: YellowGem
+    m_Address: Assets/Configs/Tiles/Set2/YellowGem.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c16944fe961d058479b888c1a8bf991e
-    m_Address: PurpleGem
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c59eeac0e6d082f47aedb86341aec624
-    m_Address: Gem
+    m_Address: Assets/Configs/Tiles/Set2/PurpleGem.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eec431aa6308fcf4bb21789c386d31eb
-    m_Address: RedGem
+    m_Address: Assets/Configs/Tiles/Set2/RedGem.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -74,5 +69,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 88057735082d8024facd7a5a29263677, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 0c55710ef3533284ca0736937322fbd9, type: 2}
-    - {fileID: 11400000, guid: 80e0f628c543da243958b30f292eb1ce, type: 2}
+    - {fileID: 11400000, guid: d6a39939227b8144b9dd0717f0b51c7d, type: 2}
+    - {fileID: 11400000, guid: 48e19c7060f4e4546b10c2e7c3ef138e, type: 2}

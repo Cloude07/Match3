@@ -13,15 +13,45 @@ MonoBehaviour:
   m_Name: Game
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Game
-  m_GUID: 8300ceef9bd2ada4fbcc77261d959440
+  m_GUID: 0bdf02aaa76dfba42928a35309099a85
   m_SerializeEntries:
   - m_GUID: 09964a5bc5d7aab4caecd9188eea6a4f
     m_Address: BlankTile
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21654c3936b7dbc4eb1b11149af99d0b
+    m_Address: Click
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a43c908b3025ca4b94e692ff9077671
+    m_Address: Button
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4838d2b612b5e5d4bb56326dc8515080
+    m_Address: Loose
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4cef209f4652ae34694ea132ffbe9d58
     m_Address: LightBG
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a296025109b4ff409e32a0febec8653
+    m_Address: Kingdom
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8291b79a37e4cb148b65c58d91e64b1b
+    m_Address: Match
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89aab8168a81b9344b3a6f7397c2a571
+    m_Address: Deselect
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -35,8 +65,43 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99c9720ab356a0642a771bea13969a05
+    m_Address: Game
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a37b4320b30f3f4e9b194a93182e2f1
+    m_Address: TilePrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ccbcc87642846141885c6e32cf50ec2
+    m_Address: NoMatch
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b781027f8a949534bad9148fcb5046a9
+    m_Address: TopPanel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c08d9a4af580f2d49a1b99024fb76956
+    m_Address: Win
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c59eeac0e6d082f47aedb86341aec624
+    m_Address: Gem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d266e306f14de0f418bfbc2c78a870ae
     m_Address: FXPrefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4958a2542533b94b84f5cfad94099ec
+    m_Address: window
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -44,5 +109,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 88057735082d8024facd7a5a29263677, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 1df43837074ae334391877d7f8a29613, type: 2}
-    - {fileID: 11400000, guid: ecdd49f2658563349995f55c8ddae604, type: 2}
+    - {fileID: 11400000, guid: ce324219055dccc4a9defeb9d4f39203, type: 2}
+    - {fileID: 11400000, guid: 27a6cfcba0aba5a4eb1bdd574b956679, type: 2}
