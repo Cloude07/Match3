@@ -2,6 +2,7 @@
 using Audio;
 using Boot;
 using Data;
+using save;
 using SceneLoading;
 using UnityEngine;
 using VContainer;
@@ -22,6 +23,7 @@ namespace DI
             builder.Register<IAnimation, AnimationManager>(Lifetime.Singleton);
             builder.RegisterInstance(_loadingView);
             builder.RegisterInstance(_audioManager);
+            builder.Register<SaveProgress>(Lifetime.Singleton);
 
         }
     }
