@@ -53,7 +53,7 @@ namespace Game.Tiles
             return tile;
         }
 
-        private TileConfig GetRandomTileConfig() => _gameResourcesLoader.TileSetConfig
-            .Set[Random.Range(0, _gameResourcesLoader.TileSetConfig.Set.Count)];
+        private TileConfig GetRandomTileConfig() => _gameResourcesLoader.CurrentTileSet
+            [Random.Range(0, _gameResourcesLoader.CurrentTileSet.Count)];
     }
 }

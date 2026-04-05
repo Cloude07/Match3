@@ -10,48 +10,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: MainGroup
+  m_Name: KingdomPack
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: MainGroup
-  m_GUID: d9ab553d7dc471747882596b1447c3dc
+  m_GroupName: KingdomPack
+  m_GUID: b3a443bbd7530524ca65f22b6f9f3ce1
   m_SerializeEntries:
-  - m_GUID: 4790463b3e752f24ab1d22f58c6b383d
-    m_Address: AudioMixer
+  - m_GUID: 18ac52d6af2c4ab4b8aa582fa11b31ae
+    m_Address: Book
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 59ab110d09835244eb5c36c797a13eab
-    m_Address: Levels1-5
+  - m_GUID: 1e53e8eec25bb3941ad5d88596de2573
+    m_Address: Book
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 60e7558fcb0572543bdc70763dac0688
-    m_Address: Levels6-10
+  - m_GUID: 35304b0fd56ced841b14444d7be6626b
+    m_Address: Coin
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6f39fe47fd7dfe74b8d2e555e982d6f7
-    m_Address: Menu
+  - m_GUID: 391e5b6f1c140ae4ea3cfd5523242c9a
+    m_Address: Potion
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 99c9720ab356a0642a771bea13969a05
-    m_Address: Game
+  - m_GUID: 3b6c88e14b48d004a8ed19be8de8bf3b
+    m_Address: Sword
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9a37b4320b30f3f4e9b194a93182e2f1
-    m_Address: TilePrefab
+  - m_GUID: 4f0ec8faaf4b9bd438d3748cdfa5d303
+    m_Address: Shield
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b5c0e00ae034fbd438fa934bfeacd627
-    m_Address: LoadingScreen
+  - m_GUID: 57544ea075ade794bab19e63651c7107
+    m_Address: Shield
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c5455d18bb2d51148ad3f189f7d3dc6c
-    m_Address: Boot
+  - m_GUID: 7a296025109b4ff409e32a0febec8653
+    m_Address: Kingdom
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ee2f6b15d240974abc44f13b5c9b4fb
+    m_Address: Coin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6ed1dc0e9186d2419f1604a7b65620d
+    m_Address: Potion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1c5bbb52fb6f15449a3900f8df7bed9
+    m_Address: Sword
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -59,5 +74,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 88057735082d8024facd7a5a29263677, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 49f485fd8154ce14b866a4154f2c73ef, type: 2}
-    - {fileID: 11400000, guid: 45165dc527910834e8ef7d1d10972a07, type: 2}
+    - {fileID: 11400000, guid: d388d2f211d5b264198fbd5982961da3, type: 2}
+    - {fileID: 11400000, guid: bf9eb2e59aaed8844acce479ad043e12, type: 2}

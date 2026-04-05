@@ -10,48 +10,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: MainGroup
+  m_Name: GemPack
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
-  m_GroupName: MainGroup
-  m_GUID: d9ab553d7dc471747882596b1447c3dc
+  m_GroupName: GemPack
+  m_GUID: 529baa44482afc6419299454e9d99904
   m_SerializeEntries:
-  - m_GUID: 4790463b3e752f24ab1d22f58c6b383d
-    m_Address: AudioMixer
+  - m_GUID: 000f1050047d09c49b863b22d81b7796
+    m_Address: YellowGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 59ab110d09835244eb5c36c797a13eab
-    m_Address: Levels1-5
+  - m_GUID: 093aa494dc6653243ad5f3bc49ff4ad7
+    m_Address: BlueGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 60e7558fcb0572543bdc70763dac0688
-    m_Address: Levels6-10
+  - m_GUID: 15d7c73c23b9faa4d940b578866523b3
+    m_Address: OrangeGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6f39fe47fd7dfe74b8d2e555e982d6f7
-    m_Address: Menu
+  - m_GUID: 31bcd506d5c9e514f9f0e7b3de4e1b96
+    m_Address: RedGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 99c9720ab356a0642a771bea13969a05
-    m_Address: Game
+  - m_GUID: 49a02b650a9506946acf0fad965bf898
+    m_Address: BlueGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9a37b4320b30f3f4e9b194a93182e2f1
-    m_Address: TilePrefab
+  - m_GUID: 6060892cd741d1b468e0ccf3430c34e3
+    m_Address: PurpleGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b5c0e00ae034fbd438fa934bfeacd627
-    m_Address: LoadingScreen
+  - m_GUID: 7de5a3ed098ef0e46a71a36fdc208ad9
+    m_Address: OrangeGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c5455d18bb2d51148ad3f189f7d3dc6c
-    m_Address: Boot
+  - m_GUID: 8448c7f049c043e4687b262329715554
+    m_Address: YellowGem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c16944fe961d058479b888c1a8bf991e
+    m_Address: PurpleGem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c59eeac0e6d082f47aedb86341aec624
+    m_Address: Gem
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eec431aa6308fcf4bb21789c386d31eb
+    m_Address: RedGem
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -59,5 +74,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 88057735082d8024facd7a5a29263677, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 49f485fd8154ce14b866a4154f2c73ef, type: 2}
-    - {fileID: 11400000, guid: 45165dc527910834e8ef7d1d10972a07, type: 2}
+    - {fileID: 11400000, guid: 0c55710ef3533284ca0736937322fbd9, type: 2}
+    - {fileID: 11400000, guid: 80e0f628c543da243958b30f292eb1ce, type: 2}

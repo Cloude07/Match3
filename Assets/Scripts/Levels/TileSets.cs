@@ -3,7 +3,7 @@
     //Список уровней которые можно выбрать
     public enum TileSets
     {
-        Kimgdom,
+        Kingdom,
         Gem
     }
 }

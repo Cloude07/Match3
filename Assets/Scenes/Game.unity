@@ -1724,7 +1724,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1462935534}
-  - component: {fileID: 1462935533}
   m_Layer: 0
   m_Name: GameScripts
   m_TagString: Untagged
@@ -1732,26 +1731,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1462935533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462935532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f2a57bc648307b44b83a86a35bfe39b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResourcesLoading.GameResourcesLoader
-  _tilePrefab: {fileID: 7398622418354616533, guid: 9a37b4320b30f3f4e9b194a93182e2f1, type: 3}
-  _blankPrefab: {fileID: 7398622418354616533, guid: 31aaf00947dac624791a3e1c64d2584f, type: 3}
-  _blankConfig: {fileID: 11400000, guid: 09964a5bc5d7aab4caecd9188eea6a4f, type: 2}
-  _tileSetConfig: {fileID: 11400000, guid: 7a296025109b4ff409e32a0febec8653, type: 2}
-  _backgroundTilePrefab: {fileID: 8173455342624187215, guid: 8f93baae1fcde1b4f96b3b99cbf4aa33, type: 3}
-  _fxPrefab: {fileID: 7834839563654822937, guid: d266e306f14de0f418bfbc2c78a870ae, type: 3}
-  _darkTile: {fileID: 21300000, guid: 8fa58547f45a0f54994a5b03d233f306, type: 3}
-  _lightTile: {fileID: 21300000, guid: 4cef209f4652ae34694ea132ffbe9d58, type: 3}
 --- !u!4 &1462935534
 Transform:
   m_ObjectHideFlags: 0
@@ -1805,7 +1784,6 @@ MonoBehaviour:
   - {fileID: 883309606}
   - {fileID: 1462935532}
   _gameBoard: {fileID: 883309607}
-  _resourcesLoader: {fileID: 1462935533}
   _endGamePanelView: {fileID: 1987654725}
   _progressView: {fileID: 1945622238}
 --- !u!4 &1509798701

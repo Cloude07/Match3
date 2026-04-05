@@ -66,7 +66,7 @@ namespace Game.EntryPoint
             _fxPool = fXPool;
         }
 
-        public void Initialize()
+        public async void Initialize()
         {
             _levelConfig = _gameData.CurrentLevel;
             if (_isDebuging)
@@ -74,7 +74,7 @@ namespace Game.EntryPoint
 
             _grid.SetupGrid(_levelConfig.Width, _levelConfig.Height);
             _gameProgress.LoadLevelConfig(_levelConfig.GoalScore, _levelConfig.Moves);
-            //await resources
+           await _gameResourcesLoader.Load();
             _setupCamera.SetCamera(_grid.Width, _grid.Height, _isVertical);
             _blankTilesSetup.SetupBlanks(_levelConfig);
             _stateMachine = new StateMachine(_gameBoard, _grid, _animation, _matchFinder,
